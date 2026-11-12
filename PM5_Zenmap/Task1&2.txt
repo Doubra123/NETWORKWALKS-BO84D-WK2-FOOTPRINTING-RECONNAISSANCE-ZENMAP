@@ -1,0 +1,32 @@
+ 1.nmap --version
+ Nmap version 7.95 ( https://nmap.org )
+ Platform: x86_64-pc-linux-gnu
+ Compiled with: liblua-5.4.7 openssl-3.6.5 libssh2-1.11.1 libz-1.3.1 libpcre2-10.48 libpcap-1.10.5 nmap-libdnet-1.12 ipv6
+ Compiled without:
+ Available nsock engines: epoll poll select
+ 
+ ┌──(trophy㉿kali)-[~]
+ 2.└─$ ip -br addr
+ lo               UNKNOWN        127.0.0.1/8 ::1/128 
+ eth0             UP             10.0.0.2/24 fe80::a00:27ff:fe55:c428/64 
+ 
+ ┌──(trophy㉿kali)-[~]
+ └─$ ip route   
+ default via 10.0.0.1 dev eth0 proto static metric 100 
+ 10.0.0.0/24 dev eth0 proto kernel scope link src 10.0.0.2 metric 100 
+ 
+ 3.trophy㉿kali)-[~]
+ └─$ sudo nmap -sn 10.0.0.0/24
+ [sudo] password for trophy: 
+ Starting Nmap 7.95 ( https://nmap.org ) at 2026-11-11 13:44 EST
+ Nmap scan report for 10.0.0.1
+ Host is up (0.00053s latency).
+ MAC Address: 52:54:00:12:35:00 (QEMU virtual NIC)
+ Nmap scan report for 10.0.0.3
+ Host is up (0.00067s latency).
+ MAC Address: 52:54:00:12:35:00 (QEMU virtual NIC)
+ Nmap scan report for 10.0.0.2
+ Host is up.
+ Nmap done: 256 IP addresses (3 hosts up) scanned in 2.24 seconds
+ 
+ 
